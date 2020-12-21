@@ -27,6 +27,9 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
+/* Not sure if what is below this comment is right */
+stack_t *head = NULL;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
