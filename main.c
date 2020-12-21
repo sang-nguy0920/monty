@@ -9,15 +9,15 @@ int main(void)
 
 	if(!fp)
 	{
-		fprintf(stderr, "USAGE: monty file\n")
+		fprintf(stderr, "USAGE: monty file\n");
 		return EXIT_FAILURE
 	}
-	line = getline(&buffer, &bufsize, fp)
+	line = _getline(stdin);
 	while (line >= 0)
 	{
 		line_number++;
 		/*where we tokenize*/
-		line = getline(&buffer, &bufsize, fp)
+		line = getline(&buffer, &bufsize, fp);
 	}
 	free(buffer);
 	buffer = NULL;
