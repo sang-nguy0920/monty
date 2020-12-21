@@ -10,6 +10,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#define BUFFER 1024
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
