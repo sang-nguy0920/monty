@@ -42,3 +42,15 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 	}
 	*stack = new_node;
 }
+
+/**
+ *push- makes a node that becomes the head of a 2x linked list
+ *@stack: double pointer to a double linked list
+ *@line_number: the current line number
+ *@n: content to populate linked list with
+ *Return: void
+**/
+void pint(stack_t **stack, unsigned int line_number)
+{
+
+}
