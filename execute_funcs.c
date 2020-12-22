@@ -15,9 +15,9 @@ int itr;
 	instruction_t opcodes[] = {
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 	/*
-		*{"pop", pop},
-		*{"swap", swap},
 		*{"add", add},
 		*{"nop", nop},
 	*/
