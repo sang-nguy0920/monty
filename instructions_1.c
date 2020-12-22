@@ -1,9 +1,9 @@
 #include "monty.h"
-void _push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number, int *n)
 {
-	stack_t new_node = NULL;
+	stack_t *new_node = NULL;
 
-	if (head == NULL)
+	if (x == NULL)
 	{
 		new_node = malloc(sizeof(stack_t));
 		if (new_node == NULL)

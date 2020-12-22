@@ -13,7 +13,7 @@ FILE *fp;
 stack_t *stack = NULL;
 char *line = NULL;
 char *code_name;
-char *x;
+int *n;
 unsigned int line_number;
 size_t len = 0; ssize_t read;
 
@@ -37,8 +37,8 @@ if (code_name == NULL || strncmp(code_name, "#", 1) == 0)
 continue;
 if (strcmp(code_name, "push") == 0)
 {
-x = strtok(NULL, "\n ");
-push(&stack, line_number, x);
+n = strtok(NULL, "\n ");
+push(&stack, line_number, n);
 }
 else
 exec_functions(code_name, &stack, line_number);
