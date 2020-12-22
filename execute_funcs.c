@@ -20,6 +20,7 @@ int itr;
 		{"nop", nop},
 		{"sub", sub},
 		{"div", _div},
+		{"mul", _mul},
 	/*
 		*{"swap", swap},
 	*/
