@@ -1,57 +1,35 @@
 #include "monty.h"
-/**
-* monty_num_functions - check num of functions
-* @functions : counts num of functions
-* Description: check num of funcs
-* Return: num of functions
-*/
-
-int monty_num_functions(funcs_s functions[])
-{
-unsigned int i;
-
-i = 0;
-while (functions[i].name != NULL)
-i++;
-
-return (i);
-}
 
 /**
 * exec_functions - executes funcs if needed
-* @tokens: tokens to compare to see if they are funcs
+* @opcode: code from user input
+* @stack: *stack pointer
+* @line_number: line number from input
 * Description: executes funcs if needed
-* Return: args
+* Return: success/failure
 */
-int exec_functions(char **tokens)
+int exec_functions(char *opcode, stack_t **stack, unsigned int line_number)
 {
-int stat;
-unsigned int len, num, i;
+int itr;
 
-	funcs_s functions[] = {
-		{"push", hsh_exit},
-		{"pall", hsh_env},
-		{"pint", hsh_cd},
-		{"pop", hsh_setenv},
-		{"swap", hsh_unsetenv},
-		{"add", hsh_unsetenv},
-		{"nop", hsh_unsetenv},
+	instruction_t opcodes[] = {
+		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 
-if (tokens[0] == NULL)
-return (1);
-
-len = strlen(tokens[0]);
-
-num = monty_num_functions(functions);
-for (i = 0; i < num; i++)
+for (itr = 0; opcodes[itr].opcode != NULL; itr++)
 {
-if (strncmp(tokens[0], functions[i].name, len) == 0)
+if (strcmp(opcode, opcodes[itr].opcode) == 0)
 {
-stat = (functions[i].p)();
-return (stat); /*return builtin function */
+(opcodes[itr].f)(stack, line_number);
+return (EXIT_SUCCESS);
 }
 }
-return (1);
+printf("L%d: unknown instruction %s\n", line_number, opcode);
+exit(EXIT_FAILURE);
 }
