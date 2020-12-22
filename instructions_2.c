@@ -83,3 +83,29 @@ void _mod(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 	(*stack)->n %= val_store;
 }
+/**
+ *pchar- prints char in top node
+ *@stack: double pointer to double linked list
+ *@line_number: current line number
+ *Return: void
+**/
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	unsigned int x = line_number;
+	int n = (*stack)->n;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", x);
+		exit(EXIT_FAILURE);
+	}
+	if (n < 0 || n > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range", x);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		printf("%c\n", n);
+	}
+}

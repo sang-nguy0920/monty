@@ -22,6 +22,7 @@ int itr;
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"pchar", pchar},
 	/*
 		*{"swap", swap},
 	*/
