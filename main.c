@@ -13,7 +13,7 @@ FILE *fp;
 stack_t *stack = NULL;
 char *line = NULL;
 char *code_name;
-int *n;
+char *n;
 unsigned int line_number;
 size_t len = 0; ssize_t read;
 
