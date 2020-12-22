@@ -16,9 +16,9 @@ int itr;
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"add", add},
 	/*
 		*{"swap", swap},
-		*{"add", add},
 		*{"nop", nop},
 	*/
 		{NULL, NULL}

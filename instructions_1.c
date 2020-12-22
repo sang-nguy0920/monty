@@ -70,7 +70,7 @@ void pop(stack_t **stack, unsigned int line_number) /* NOT CORRECT STILL WIP*/
 stack_t *temp;
 if (stack == NULL || *stack == NULL)
 {
-fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 exit(EXIT_FAILURE);
 }
 temp = (*stack)->next;
@@ -88,4 +88,22 @@ void nop(stack_t **stack, unsigned int line_number)
 {
 (void)stack;
 (void)line_number;
+}
+/**
+ *add- adds top two nodes and pops top node
+ *@stack: double pointer to double linked list
+ *@line_number: current line number
+ *Return: void
+**/
+void add(stack_t **stack, unsigned int line_number)
+{
+	int val_store = (*stack)->n;
+
+	if ((*stack == NULL) | ((*stack)->next == NULL))
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	pop(stack, line_number);
+	(*stack)->n += val_store;
 }
