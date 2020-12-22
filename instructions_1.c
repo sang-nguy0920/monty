@@ -86,8 +86,8 @@ free(*stack);
 **/
 void nop(stack_t **stack, unsigned int line_number)
 {
-UNUSED(stack);
-UNUSED(line_number);
+(void*)stack;
+(void*)line_number;
 }
 /**
  *add- adds top two nodes and pops top node
