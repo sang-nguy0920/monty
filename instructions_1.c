@@ -51,12 +51,10 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 **/
 void pint(stack_t **stack, unsigned int line_number)
 {
-int temp;
 if (stack == NULL || *stack == NULL)
 {
 fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 exit(EXIT_FAILURE);
 }
-temp = (*stack)->n;
-printf("%d\n", temp);
+printf("%d\n", (*stack)->n);
 }
