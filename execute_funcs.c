@@ -32,6 +32,6 @@ if (strcmp(opcode, opcodes[itr].opcode) == 0)
 return (EXIT_SUCCESS);
 }
 }
-printf("L%d: unknown instruction %s\n", line_number, opcode);
+fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 exit(EXIT_FAILURE);
 }
