@@ -13,8 +13,8 @@ int exec_functions(char *opcode, stack_t **stack, unsigned int line_number)
 int itr;
 
 	instruction_t opcodes[] = {
-		/*{"pall", pall},
-		{"pint", pint},
+		{"pall", pall},
+		/*{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
