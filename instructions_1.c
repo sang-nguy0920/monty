@@ -44,13 +44,19 @@ void push(stack_t **stack, unsigned int line_number, char *n)
 }
 
 /**
- *push- makes a node that becomes the head of a 2x linked list
+ *pint- prints the value at the top of the stack
  *@stack: double pointer to a double linked list
  *@line_number: the current line number
- *@n: content to populate linked list with
  *Return: void
 **/
 void pint(stack_t **stack, unsigned int line_number)
 {
-
+int temp;
+if (stack == NULL || *stack == NULL)
+{
+fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+exit(EXIT_FAILURE);
+}
+temp = (*stack)->n;
+printf("%d\n", temp);
 }
