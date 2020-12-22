@@ -68,14 +68,12 @@ printf("%d\n", (*stack)->n);
 void pop(stack_t **stack, unsigned int line_number) /* NOT CORRECT STILL WIP*/
 {
 stack_t *temp;
-if (*stack == NULL)
+if (stack == NULL || *stack == NULL)
+{
 fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 exit(EXIT_FAILURE);
-
-temp = *stack;
-*stack = temp->next;
-
-if (temp->next)
-temp->next->prev = NULL;
-free(temp);
+}
+temp = (*stack)->next;
+free(*stack);
+*stack = temp;
 }
